@@ -12,7 +12,7 @@ const modelParams = {
         navigator.msGetUserMedia;
 
 
-
+const h1 = document.querySelector('h1');
 const video = document.querySelector('#video');
 const audio = document.querySelector('#audio');
 const canvas = document.querySelector('#canvas');
@@ -36,7 +36,9 @@ function runDetection() {
         .then(predictions => {
        console.log(predictions);
        if (predictions.length > 0) {
-           audio.play();
+           h1.style.display = 'block';
+       }else {
+           h1.style.display = 'none';
        }
     });
 }
